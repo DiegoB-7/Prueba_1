@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main(){
+    float lista_grupo1[3];
+    float lista_grupo2[3];
+    float lista_grupo3[3];
+    float promedio;
+    float promedio_final[3];
+    float contador_display=1;
+    float contador_display1=1;
+    float calificacion_mayor=0;
+    float calificacion_menor=100;
+    float sumatoria_promedio=0;
+    for(int i=0;i<3;i++){
+        for(int i=0;i<5;i++){
+        cout<<"Escribe la calificacion del alumno ("<<contador_display<<") del grupo ("<<contador_display1<<")"<<endl;
+        float calificacion;
+        cin>>calificacion;
+
+        if(calificacion>calificacion_mayor)
+            calificacion_mayor=calificacion;
+        if(calificacion<calificacion_menor)
+            calificacion_menor=calificacion;
+        sumatoria_promedio=sumatoria_promedio+calificacion;
+        contador_display++;
+        }
+        contador_display=1;
+        promedio=sumatoria_promedio/5;
+        promedio_final[i]=promedio;
+        promedio=0;
+        sumatoria_promedio=0;
+        contador_display1++;
+    }
+    contador_display=1;
+    for(int i=0;i<3;i++){
+        cout<<"El promedio final del grupo ("<<contador_display<<") es:"<<promedio_final[i]<<endl;
+        contador_display++;
+    }
+cout<<"La calificacion mayor es:"<<calificacion_mayor<<endl;
+cout<<"La calificacion menor es:"<<calificacion_menor<<endl;
+    return 0;
+}
